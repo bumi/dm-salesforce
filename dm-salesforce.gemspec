@@ -1,5 +1,3 @@
-require 'bundler'
-Bundler.require(:default, :runtime)
 require File.dirname(__FILE__) + '/lib/dm-salesforce'
 
 GEM = "dm-salesforce"
@@ -20,12 +18,13 @@ SUMMARY = "A DataMapper adapter to the Salesforce API"
   s.authors = AUTHORS
   s.email = EMAIL
   s.homepage = HOMEPAGE
-
-  bundle = Bundler::Definition.from_gemfile('Gemfile')
-  bundle.dependencies.each do |dep|
-    next unless dep.groups.include?(:runtime)
-    s.add_dependency(dep.name, dep.version_requirements.to_s)
-  end
+  
+  s.add_dependency("httpclient", "=2.1.5.2")
+  s.add_dependency("extlib", "~> 0.9.9")
+  s.add_dependency("dm-core", "~> 0.10.1")
+  s.add_dependency("dm-validations", "~> 0.10.1")
+  s.add_dependency("dm-types", "~> 0.10.1")
+  s.add_dependency("soap4r", "~> 1.5.8")
 
   s.require_path = 'lib'
   s.files = %w(LICENSE README.markdown Rakefile) + Dir.glob("lib/**/*")
