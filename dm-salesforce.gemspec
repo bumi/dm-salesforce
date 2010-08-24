@@ -1,7 +1,6 @@
-require File.dirname(__FILE__) + '/lib/dm-salesforce'
 
 GEM = "dm-salesforce"
-GEM_VERSION = DataMapper::Salesforce::VERSION
+GEM_VERSION = "0.10.5"
 AUTHORS = ["Yehuda Katz", 'Tim Carey-Smith']
 EMAIL = "wycats@gmail.com"
 HOMEPAGE = "http://www.yehudakatz.com"
